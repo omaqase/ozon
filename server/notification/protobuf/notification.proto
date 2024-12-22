@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package protobuf;
+
+import "google/protobuf/empty.proto";
+
+option go_package = "github.com/oqamase/ozon/notification/pkg/notification;notification";
+
+service NotificationService {
+  rpc SendEmailMessage(SendEmailMessageRequest) returns (google.protobuf.Empty);
+}
+
+message SendEmailMessageRequest {
+  string receiver = 1;
+  string content = 2;
+}
